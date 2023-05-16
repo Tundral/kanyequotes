@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Publish') {
             steps {
-            nexusPublisher nexusInstanceId: 'localNexus', nexusRepositoryId: 'releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: 'war/target/jenkins.war']], mavenCoordinate: [artifactId: 'jenkins-war', groupId: 'org.jenkins-ci.main', packaging: 'war', version: '2.23']]]
+            nexusPublisher nexusInstanceId: 'A', nexusRepositoryId: 'releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: 'war/target/jenkins.war']], mavenCoordinate: [artifactId: 'kanyequotes', groupId: 'com.dymesolutions.lauri', packaging: 'jar', version: '2.23']]]
             }
         }
     }
