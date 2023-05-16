@@ -15,11 +15,7 @@ pipeline {
         }
         stage('Publish') {
             steps {
-            nexusPublisher
-            nexusInstanceId: 'Nexus-test',
-            nexusRepositoryId: 'maven-releases',
-            packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: 'target/kanyequotes-1.0-SNAPSHOT.jar']],
-            mavenCoordinate: [artifactId: 'kanyequotes', groupId: 'com.dymesolutions.lauri', packaging: 'jar', version: '2.23']]]
+               nexusPublisher nexusInstanceId: 'Nexus-test', nexusRepositoryId: 'maven-releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: 'target/kanyequotes-1.0-SNAPSHOT.jar']], mavenCoordinate: [artifactId: 'kanyequotes', groupId: 'com.dymesolutions.lauri', packaging: 'jar', version: '2.23']]]
             }
         }
     }
